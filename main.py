@@ -108,7 +108,7 @@ if st.session_state.feedback_no_flg and input_message:
 
 for index, message in enumerate(st.session_state.messages):
     if message["role"] == "assistant":
-        with st.chat_message(message["role"], avatar="images/ロボット.jpg"):
+        with st.chat_message(message["role"], avatar="images/robot.jpg"):
             st.markdown(message["content"])
             if index == len(st.session_state.messages) - 1:
                 if st.session_state.feedback_yes_flg:
@@ -156,7 +156,7 @@ for index, message in enumerate(st.session_state.messages):
 
 for big_category in st.session_state.contact_items:
     if st.session_state.contact_items[big_category]["selected"]:
-        with st.chat_message("assistant", avatar="images/ロボット.jpg"):
+        with st.chat_message("assistant", avatar="images/robot.jpg"):
             st.markdown(f"「{ct.CONTACT_ITEMS[big_category]['label']}」の質問項目を選択してください。")
             for small_category in ct.CONTACT_ITEMS[big_category]["items"]:
                 if st.session_state.contact_items[big_category]["items"][small_category]["selected"]:
@@ -170,7 +170,7 @@ for big_category in st.session_state.contact_items:
                 click_flg = True
                 small_category_name = ct.CONTACT_ITEMS[big_category]["items"][small_category]["label"]
         if click_flg:
-            with st.chat_message("assistant", avatar="images/ロボット.jpg"):
+            with st.chat_message("assistant", avatar="images/robot.jpg"):
                 st.markdown(f"「{small_category_name}」の質問項目を選択してください。")
                 for small_category in ct.CONTACT_ITEMS[big_category]["items"]:
                     if st.session_state.contact_items[big_category]["items"][small_category]["selected"]:
@@ -187,7 +187,7 @@ for big_category in st.session_state.contact_items:
                         click_flg = True
                         answer = ct.CONTACT_ITEMS[big_category]["items"][small_category]["questions"][question_id]["answer"]
             if click_flg:
-                with st.chat_message("assistant", avatar="images/ロボット.jpg"):
+                with st.chat_message("assistant", avatar="images/robot.jpg"):
                     st.markdown(answer)
 
 if input_message:
