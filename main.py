@@ -247,7 +247,7 @@ if input_message:
             """
         st.session_state.messages.append({"role": "assistant", "content": result})
 
-    with st.chat_message("assistant", avatar="images/ロボット.jpg"):
+    with st.chat_message("assistant", avatar="images/robot.jpg"):
         st.markdown(result)
         st.session_state.answer_flg = True
         st.caption("この回答はお役に立ちましたか？フィードバックをいただくことで、生成AIの回答の質が向上します。")
