@@ -131,7 +131,7 @@ for index, message in enumerate(st.session_state.messages):
                     st.session_state.feedback_no_reason_send_flg = False
                     st.caption("ご回答いただき誠にありがとうございます。")
     else:
-        with st.chat_message(message["role"]):
+        with st.chat_message(message["role"], avatar="images/user.jpeg"):
             st.markdown(message["content"])
             if index == len(st.session_state.messages) - 1:
                 if st.session_state.feedback_yes_flg:
@@ -192,7 +192,7 @@ for big_category in st.session_state.contact_items:
 
 if input_message:
     st.session_state.messages.append({"role": "user", "content": input_message})
-    with st.chat_message("user"):
+    with st.chat_message("user", avatar="images/user.jpeg"):
         st.markdown(input_message)
 
     with st.spinner('回答生成中...'):
