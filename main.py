@@ -91,7 +91,7 @@ if "messages" not in st.session_state:
     #     agent=AgentType.ZERO_SHOT_REACT_DESCRIPTION
     # )
 
-with st.chat_message("assistant",  avatar="images/ロボット.jpg"):
+with st.chat_message("assistant", avatar="images/robot.jpg"):
     st.success("私はお客様のご質問にお答えする生成AIロボットです。画面下部のチャット欄から対話形式でやり取りするか、以下のボタンをクリックしてよくある質問への回答をご参照ください。")
     for big_category in ct.CONTACT_ITEMS:
         if st.session_state.contact_items[big_category]["selected"]:
